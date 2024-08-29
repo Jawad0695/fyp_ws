@@ -1,0 +1,8 @@
+prefix=/home/smaunrizvi/fyp_ws/install
+
+Name: first_version
+Description: Description of first_version
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
