@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- Declare launch arguments -->
+    <arg name="use_sim_time" default="false"/>
+
+    <!-- Process the URDF file with xacro -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find first_version)/description/robot.urdf.xacro' sim_mode:=$(arg use_sim_time)"/>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+      <param name="use_gui" value="False"/>
+    </node>
+
+    <!-- Launch the robot_state_publisher node -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+        <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find first_version)/description/robot.urdf.xacro' sim_mode:=$(arg use_sim_time)"/>
+        <param name="use_sim_time" value="$(arg use_sim_time)"/> -->
+    </node>
+</launch>
+
+

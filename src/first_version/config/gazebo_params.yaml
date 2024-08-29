@@ -1,0 +1,4 @@
+# Example of gazebo_params.yaml
+gravity: 9.81
+max_update_rate: 1000.0
+real_time_factor: 1.0
